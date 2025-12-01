@@ -1,0 +1,26 @@
+name: Telegram Bot CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  test-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          pip install pyTelegramBotAPI
+
+      - name: Lint Python (basic syntax check)
+        run: |
+          python -m py_compile bot.py
