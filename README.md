@@ -42,8 +42,8 @@ Start the bot:
 python bot.py
 
 Commands & Description
-/start
 
+/start
 Start the bot
 /menu
 Open menu
